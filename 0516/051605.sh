@@ -1,2 +1,2 @@
 export NLS_LANG='JAPANESE_JAPAN.AL32UTF8'
-printenv
+echo $NLS_LANG
