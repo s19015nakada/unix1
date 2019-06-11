@@ -6,3 +6,7 @@ if [ -d "$1" ]; then
          if [ -x "$file" ]; then
              echo $(basename "$file")
          fi
+    done
+else
+    echo "${1}: ディレクトリではありません"
+fi

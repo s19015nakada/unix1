@@ -1,7 +1,14 @@
 #!/bin/bash
 
 if [ -d "$1" ]; then
-    find $1 -maxdepth 1 -and -type f -not -perm -u=r 
+    for file in $(ls "$1")
+    do
+        #fileが実行ファイルであれば表示
+        if [ ! -x "${1}/${file}" ]; then
+            echo "$file"
+        fi
+    done
 else
-    echo "$1: ディレクトリではありません"
+    # エラーメッセージ
+    echo "${1}: ディレクトリではありません"
 fi
